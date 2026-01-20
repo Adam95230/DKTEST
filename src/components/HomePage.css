@@ -1,8 +1,16 @@
 .home-page {
   padding: 0;
-  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   position: relative;
   z-index: 1;
+}
+
+.page-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--systemPrimary);
+  margin: 0 0 32px 0;
+  letter-spacing: -0.03em;
 }
 
 @keyframes fadeIn {
@@ -42,15 +50,18 @@
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
-  animation: cardAppear 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: cardAppear 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   animation-fill-mode: both;
   border-radius: 8px;
   overflow: hidden;
   background: var(--contentBg);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .recent-track-card {
+  background: var(--contentBg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -81,8 +92,11 @@
 }
 
 .recent-track-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  background: var(--shelfBg);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark .recent-track-card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
@@ -184,15 +198,18 @@
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
-  animation: cardAppear 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: cardAppear 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   animation-fill-mode: both;
   border-radius: 8px;
   overflow: hidden;
   background: var(--contentBg);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .playlist-card {
+  background: var(--contentBg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -204,8 +221,11 @@
 .playlist-card:nth-child(6) { animation-delay: 0.3s; }
 
 .playlist-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  background: var(--shelfBg);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark .playlist-card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 

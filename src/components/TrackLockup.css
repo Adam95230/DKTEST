@@ -41,33 +41,35 @@
 
 .track-lockup__title {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.46667;
-  color: var(--systemPrimary, rgba(0, 0, 0, 0.85));
+  color: var(--systemPrimary);
   margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: -0.01em;
 }
 
 .dark .track-lockup__title {
-  color: var(--systemPrimary, rgba(255, 255, 255, 0.85));
+  color: var(--systemPrimary);
 }
 
 .track-lockup__artist {
   font-size: 13px;
   font-weight: 400;
   line-height: 1.38462;
-  color: var(--systemSecondary, rgba(0, 0, 0, 0.5));
+  color: var(--systemSecondary);
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: -0.01em;
 }
 
 .dark .track-lockup__artist {
-  color: var(--systemSecondary, rgba(255, 255, 255, 0.55));
+  color: var(--systemSecondary);
 }

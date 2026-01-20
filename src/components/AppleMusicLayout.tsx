@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { api } from '../services/api';
 import './AppleMusicLayout.css';
+import './MiniPlayer.css';
 
 interface AppleMusicLayoutProps {
   children: React.ReactNode;
@@ -64,9 +65,80 @@ export const AppleMusicLayout: React.FC<AppleMusicLayoutProps> = ({ children, on
     handleSearch(suggestion);
   };
   return (
-    <div className="apple-music-layout">
-      {/* Sidebar Navigation */}
-      <aside className="navigation-sidebar">
+    <div className="apple-music-layout with-mini-player">
+      {/* Top Header with Mini Player */}
+      <header className="top-header">
+        <div className="top-header-controls">
+          <button className="mini-player-button">
+            <svg height="20" viewBox="0 0 20 20" width="20">
+              <path d="M4.75 7.75a1 1 0 0 1 1.508-.861l7.842 4.75a1 1 0 0 1 0 1.722l-7.842 4.75A1 1 0 0 1 4.75 17.25V7.75z"></path>
+            </svg>
+          </button>
+          <button className="mini-player-button">
+            <svg height="20" viewBox="0 0 20 20" width="20">
+              <path d="M10 3.758l1.826 3.699a1 1 0 0 0 .754.547l4.082.593a1 1 0 0 1 .554 1.706l-2.954 2.88a1 1 0 0 0-.288.884l.697 4.067a1 1 0 0 1-1.451 1.054L9.566 17.44a1 1 0 0 0-.932 0l-3.654 1.922a1 1 0 0 1-1.45-1.054l.696-4.067a1 1 0 0 0-.288-.884l-2.954-2.88a1 1 0 0 1 .554-1.706l4.082-.593a1 1 0 0 0 .754-.547L10 3.758z"></path>
+            </svg>
+          </button>
+          <button className="mini-player-button">
+            <svg height="20" viewBox="0 0 20 20" width="20">
+              <path d="M5 3.75A2.25 2.25 0 0 1 7.25 1.5h5.5A2.25 2.25 0 0 1 15 3.75v.5h.25a2 2 0 0 1 2 2v11.5a2 2 0 0 1-2 2H4.75a2 2 0 0 1-2-2V6.25a2 2 0 0 1 2-2H5v-.5z"></path>
+            </svg>
+          </button>
+        </div>
+        <div className="header-mini-player">
+          <div className="mini-player-art">
+            <img src="https://via.placeholder.com/48" alt="" />
+          </div>
+          <div className="mini-player-controls">
+            <button className="mini-player-button">
+              <svg height="16" viewBox="0 0 16 16" width="16">
+                <path d="M15 7.5a.5.5 0 0 1-.5.5H3.207l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L3.207 7H14.5a.5.5 0 0 1 .5.5z"></path>
+              </svg>
+            </button>
+            <button className="mini-player-button play-pause">
+              <svg height="20" viewBox="0 0 20 20" width="20">
+                <path d="M4.75 7.75a1 1 0 0 1 1.508-.861l7.842 4.75a1 1 0 0 1 0 1.722l-7.842 4.75A1 1 0 0 1 4.75 17.25V7.75z"></path>
+              </svg>
+            </button>
+            <button className="mini-player-button">
+              <svg height="16" viewBox="0 0 16 16" width="16">
+                <path d="M1 7.5a.5.5 0 0 0 .5.5h11.293l-4.147 4.146a.5.5 0 0 0 .708.708l5-5a.5.5 0 0 0 0-.708l-5-5a.5.5 0 0 0-.708.708L12.793 7H1.5a.5.5 0 0 0-.5.5z"></path>
+              </svg>
+            </button>
+          </div>
+          <div className="mini-player-info">
+            <div className="mini-player-title">All Of Me</div>
+            <div className="mini-player-artist">Niall • HIT ME</div>
+          </div>
+          <div className="mini-player-progress">
+            <span className="mini-player-time">1:23</span>
+            <input type="range" className="mini-player-progress-bar" min="0" max="100" defaultValue="30" />
+            <span className="mini-player-time">-1:23</span>
+          </div>
+        </div>
+        <div className="mini-player-actions">
+          <button className="mini-player-button">
+            <svg height="20" viewBox="0 0 20 20" width="20">
+              <path d="M8 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3zm6 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V3z"></path>
+            </svg>
+          </button>
+          <button className="mini-player-button">
+            <svg height="20" viewBox="0 0 20 20" width="20">
+              <path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.75-11.25a.75.75 0 0 1 1.5 0V9.5h1.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75v-3.5z"></path>
+            </svg>
+          </button>
+          <button className="mini-player-button">
+            <svg height="20" viewBox="0 0 20 20" width="20">
+              <path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM8.5 6.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75zm0 6.5a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      {/* Body with Sidebar + Content */}
+      <div className="layout-body">
+        {/* Sidebar Navigation */}
+        <aside className="navigation-sidebar">
         <div className="navigation__header">
           <div className="logo" onClick={() => onNavigate?.('home')}>
             <svg height="20" viewBox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg" className="logo-svg" aria-hidden="true">
@@ -118,64 +190,13 @@ export const AppleMusicLayout: React.FC<AppleMusicLayoutProps> = ({ children, on
         </nav>
       </aside>
 
-      {/* Main Content Area */}
-      <div className="main-layout">
-        {/* Top Header with Search */}
-        <header className="top-header">
-          <div className="search-input-wrapper" ref={searchRef}>
-            <div className="search-input-container">
-              <form className="search-form" onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
-                <svg height="16" width="16" viewBox="0 0 16 16" className="search-svg" aria-hidden="true">
-                  <path d="M11.87 10.835c.018.015.035.03.051.047l3.864 3.863a.735.735 0 1 1-1.04 1.04l-3.863-3.864a.744.744 0 0 1-.047-.051 6.667 6.667 0 1 1 1.035-1.035zM6.667 12a5.333 5.333 0 1 0 0-10.667 5.333 5.333 0 0 0 0 10.667z"></path>
-                </svg>
-                <input 
-                  type="text" 
-                  placeholder="Rechercher" 
-                  className="search-input__text-field"
-                  spellCheck="false"
-                  autoComplete="off"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onFocus={() => query.length > 2 && setShowSuggestions(true)}
-                />
-                {query && (
-                  <button 
-                    type="button"
-                    className="clear-search" 
-                    onClick={() => {
-                      setQuery('');
-                      onClearSearch?.();
-                    }}
-                  >
-                    ×
-                  </button>
-                )}
-              </form>
-              {showSuggestions && suggestions.length > 0 && (
-                <div className="suggestions-dropdown">
-                  {suggestions.slice(0, 8).map((suggestion, index) => (
-                    <div
-                      key={index}
-                      className="suggestion-item"
-                      onClick={() => handleSuggestionClick(suggestion)}
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="m21 21-4.35-4.35" />
-                      </svg>
-                      <span>{suggestion}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </header>
-
-        {/* Content */}
-        <main className="main-content-area">
-          {children}
-        </main>
+        {/* Main Content Area */}
+        <div className="main-layout">
+          {/* Content */}
+          <main className="main-content-area">
+            {children}
+          </main>
+        </div>
       </div>
     </div>
   );

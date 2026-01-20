@@ -7,6 +7,7 @@ import type { TrackInfo } from '../types';
 import { ShelfGrid } from './ShelfGrid';
 import { TrackLockup } from './TrackLockup';
 import { EditorialCard } from './EditorialCard';
+import { TopPickCard } from './TopPickCard';
 import './HomePage.css';
 
 interface HomePageProps {
@@ -109,10 +110,42 @@ export const HomePage: React.FC<HomePageProps> = ({ onPlaylistClick }) => {
 
   return (
     <div className="home-page">
-      {/* Favoris */}
-      {likedTracks.length > 0 && (
-        <ShelfGrid title="Favoris" type="grid-type-TrackLockupsShelf" rows={4}>
-          {likedTracks.map((track) => (
+      <h1 className="page-title">Accueil</h1>
+      
+      {/* Top Picks for You */}
+      <div className="top-picks-section">
+        <div className="section-header">
+          <h2 className="section-title">Nos sélections pour vous</h2>
+          <p className="section-subtitle">Tendances avec Vlocxel Actriz...</p>
+        </div>
+        <div className="top-picks-grid">
+          <TopPickCard 
+            title="It's A Beautiful Place" 
+            subtitle="Vowell From Your Eyes" 
+            color="blue"
+          />
+          <TopPickCard 
+            title="Danny Rice's Station" 
+            subtitle="Made for You" 
+            color="orange"
+          />
+          <TopPickCard 
+            title="Gracie Abrams & Similar Artists" 
+            subtitle="Station" 
+            color="dark-blue"
+          />
+          <TopPickCard 
+            title="Get Up! Mix" 
+            subtitle="Ariana Grande, Lady Gaga, BRONZE AVERY, Adam Lambert, MARINA, and more" 
+            color="red"
+          />
+        </div>
+      </div>
+
+      {/* Recently Played */}
+      {recentTracks.length > 0 && (
+        <ShelfGrid title="Écoutés récemment" type="grid-type-TrackLockupsShelf" rows={1}>
+          {recentTracks.slice(0, 10).map((track) => (
             <TrackLockup 
               key={track.id} 
               track={track} 
@@ -138,19 +171,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onPlaylistClick }) => {
               />
             );
           })}
-        </ShelfGrid>
-      )}
-
-      {/* Recently Played */}
-      {recentTracks.length > 0 && (
-        <ShelfGrid title="Écoutés récemment" type="grid-type-TrackLockupsShelf" rows={4}>
-          {recentTracks.map((track) => (
-            <TrackLockup 
-              key={track.id} 
-              track={track} 
-              onClick={() => playTrack(track.id)} 
-            />
-          ))}
         </ShelfGrid>
       )}
 

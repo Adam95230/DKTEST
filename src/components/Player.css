@@ -3,25 +3,34 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  background: rgba(28, 28, 30, 0.95);
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(60px) saturate(180%);
   -webkit-backdrop-filter: blur(60px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0;
   display: flex;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04);
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  transition: height 0.3s, opacity 0.3s;
 }
 
-.light .player {
-  background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04);
+.dark .player {
+  background: rgba(28, 28, 30, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.with-mini-player .player {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @keyframes slideUp {

@@ -10,7 +10,61 @@
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;
   
-  /* Apple Music Color System - Dark Mode (Default) */
+  /* Apple Music Web - Light Mode (Default) */
+  --systemPrimary: rgba(0, 0, 0, 0.88);
+  --systemPrimary-vibrant: #000000;
+  --systemSecondary: rgba(0, 0, 0, 0.56);
+  --systemSecondary-vibrant: rgba(0, 0, 0, 0.72);
+  --systemTertiary: rgba(0, 0, 0, 0.28);
+  --systemTertiary-vibrant: rgba(0, 0, 0, 0.48);
+  --systemBlue: #007aff;
+  --systemBlue-vibrant: #0051d5;
+  --musicKeyColor: #fa233b;
+  
+  /* Background colors - Light Theme (Web Default) */
+  --pageBg: #ffffff;
+  --contentBg: #f5f5f7;
+  --shelfBg: rgba(0, 0, 0, 0.04);
+  --overlayBg: rgba(255, 255, 255, 0.98);
+  --headerPlayerBg: rgba(255, 255, 255, 0.92);
+  
+  /* Compatible variables - Light Theme (Web) */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 96%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 56%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 88%;
+  --input: 0 0% 96%;
+  --ring: 0 0% 0%;
+  --radius: 8px;
+  --navcolor: 0 0% 96%;
+  --gradientfrom: 211 100% 50%;
+  --gradientto: 280 100% 50%;
+  
+  /* Legacy variables for compatibility */
+  --primary-color: hsl(var(--primary));
+  --primary-color-rgb: 240, 5.9%, 10%;
+  --bg-primary: hsl(var(--background));
+  --bg-secondary: hsl(var(--secondary));
+  --text-primary: hsl(var(--foreground));
+  --text-secondary: hsl(var(--muted-foreground));
+  --accent-gradient: linear-gradient(135deg, hsl(var(--gradientfrom)) 0%, hsl(var(--gradientto)) 100%);
+}
+
+.dark {
+  /* Apple Music Color System - Dark Mode (Alternative) */
   --systemPrimary: rgba(255, 255, 255, 0.92);
   --systemPrimary-vibrant: #ffffff;
   --systemSecondary: rgba(255, 255, 255, 0.56);
@@ -26,7 +80,7 @@
   --contentBg: #1c1c1e;
   --shelfBg: rgba(255, 255, 255, 0.08);
   --overlayBg: rgba(28, 28, 30, 0.98);
-  --footerPlayerBg: #1c1c1e;
+  --headerPlayerBg: rgba(28, 28, 30, 0.92);
   
   /* Compatible variables - Dark Theme */
   --background: 0 0% 0%;
@@ -48,67 +102,13 @@
   --border: 0 0% 14%;
   --input: 0 0% 14%;
   --ring: 0 0% 92%;
-  --radius: 8px;
   --navcolor: 0 0% 11%;
   --gradientfrom: 211 100% 50%;
   --gradientto: 280 100% 50%;
   
   /* Legacy variables for compatibility */
   --primary-color: hsl(var(--primary));
-  --primary-color-rgb: 240, 5.9%, 10%;
-  --bg-primary: hsl(var(--background));
-  --bg-secondary: hsl(var(--secondary));
-  --text-primary: hsl(var(--foreground));
-  --text-secondary: hsl(var(--muted-foreground));
-  --accent-gradient: linear-gradient(135deg, hsl(var(--gradientfrom)) 0%, hsl(var(--gradientto)) 100%);
-}
-
-.light {
-  /* Apple Music Color System - Light Mode (Alternative) */
-  --systemPrimary: rgba(0, 0, 0, 0.88);
-  --systemPrimary-vibrant: #000000;
-  --systemSecondary: rgba(0, 0, 0, 0.56);
-  --systemSecondary-vibrant: rgba(0, 0, 0, 0.72);
-  --systemTertiary: rgba(0, 0, 0, 0.28);
-  --systemTertiary-vibrant: rgba(0, 0, 0, 0.48);
-  --systemBlue: #007aff;
-  --systemBlue-vibrant: #0051d5;
-  --musicKeyColor: #fa233b;
-  
-  /* Background colors - Light Theme */
-  --pageBg: #ffffff;
-  --contentBg: #f5f5f7;
-  --shelfBg: rgba(0, 0, 0, 0.04);
-  --overlayBg: rgba(255, 255, 255, 0.98);
-  --footerPlayerBg: #f5f5f7;
-  
-  /* Compatible variables - Light Theme */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
-  --card: 0 0% 96%;
-  --card-foreground: 0 0% 0%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
-  --primary: 0 0% 0%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 0 0% 0%;
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 56%;
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 88%;
-  --input: 0 0% 96%;
-  --ring: 0 0% 0%;
-  --navcolor: 0 0% 96%;
-  --gradientfrom: 211 100% 50%;
-  --gradientto: 280 100% 50%;
-  
-  /* Legacy variables for compatibility */
-  --primary-color: hsl(var(--primary));
-  --primary-color-rgb: 0, 0%, 0%;
+  --primary-color-rgb: 0, 0%, 92%;
   --bg-primary: hsl(var(--background));
   --bg-secondary: hsl(var(--secondary));
   --text-primary: hsl(var(--foreground));
