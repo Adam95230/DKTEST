@@ -1,0 +1,147 @@
+/* Apple Music Shelf Grid - Exact Style */
+.shelf-grid {
+  margin-bottom: 48px;
+}
+
+.shelf-grid__header {
+  margin-bottom: 16px;
+}
+
+.shelf-grid__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--systemPrimary);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.14286;
+}
+
+.light .shelf-grid__title {
+  color: var(--systemPrimary);
+}
+
+.shelf-grid__body {
+  position: relative;
+}
+
+.shelf-grid__list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.shelf-grid__list::-webkit-scrollbar {
+  display: none;
+}
+
+.shelf-grid__list-item {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid Type A - Large Cards (Editorial Cards) */
+.shelf-grid__list--grid-type-A {
+  gap: 16px;
+}
+
+.shelf-grid__list--grid-type-A .shelf-grid__list-item {
+  width: 530px;
+}
+
+/* Grid Type TrackLockupsShelf - Small Cards (Track Cards) */
+.shelf-grid__list--grid-type-TrackLockupsShelf {
+  gap: 12px;
+}
+
+.shelf-grid__list--grid-type-TrackLockupsShelf .shelf-grid__list-item {
+  width: 200px;
+}
+
+/* Navigation Arrows */
+.shelf-grid-nav__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(28, 28, 30, 0.95);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.15s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.light .shelf-grid-nav__arrow {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.shelf-grid-nav__arrow:hover {
+  background: rgba(28, 28, 30, 1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.light .shelf-grid-nav__arrow:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.shelf-grid-nav__arrow svg {
+  width: 9px;
+  height: 31px;
+  fill: var(--systemPrimary);
+}
+
+.light .shelf-grid-nav__arrow svg {
+  fill: var(--systemPrimary);
+}
+
+.shelf-grid-nav__arrow--left {
+  left: -20px;
+}
+
+.shelf-grid-nav__arrow--right {
+  right: -20px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.shelf-grid-nav__arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .shelf-grid__title {
+    font-size: 24px;
+  }
+
+  .shelf-grid__list--grid-type-A .shelf-grid__list-item {
+    width: 300px;
+  }
+
+  .shelf-grid__list--grid-type-TrackLockupsShelf .shelf-grid__list-item {
+    width: 160px;
+  }
+
+  .shelf-grid-nav__arrow {
+    display: none;
+  }
+}

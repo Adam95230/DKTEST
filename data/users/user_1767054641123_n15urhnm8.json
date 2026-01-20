@@ -1,0 +1,23 @@
+{
+  "id": "user_1767054641123_n15urhnm8",
+  "username": "admin",
+  "email": "admin@local.com",
+  "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+  "createdAt": 1767054641125,
+  "preferences": {
+    "theme": "dark",
+    "colorTheme": "default",
+    "volume": 0.56,
+    "autoplay": true,
+    "shuffle": false,
+    "repeat": "none",
+    "language": "fr"
+  },
+  "likedTracks": [],
+  "recentTracks": [
+    "7nVctvQVz0U",
+    "oa11bHIZNaE",
+    "GzExS7WybJg",
+    "_SIE6__mc_U"
+  ]
+}

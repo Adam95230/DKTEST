@@ -1,0 +1,11 @@
+/* Picture-in-Picture player styles */
+/* The actual PiP window is handled by the browser's native API */
+/* This file is kept for potential future customizations */
+
+.pip-player {
+  display: none;
+}
+
+/* Note: The native Picture-in-Picture API creates a browser-managed window
+   that floats above other applications. The video element with the canvas
+   stream is used to display the album cover and controls in the PiP window. */

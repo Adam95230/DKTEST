@@ -1,0 +1,29 @@
+{
+  "id": "user_1767033745827_j02mwmeyt",
+  "username": "adk230",
+  "email": "adamkajeiou95@gmail.com",
+  "passwordHash": "9fd09c1fa53e25a433aecc316e130a99336795caad66c1f7729a7f42ab5ea407",
+  "createdAt": 1767033745827,
+  "preferences": {
+    "theme": "dark",
+    "volume": 1,
+    "autoplay": true,
+    "shuffle": true,
+    "repeat": "none",
+    "language": "fr",
+    "colorTheme": "purple"
+  },
+  "likedTracks": [
+    "7nVctvQVz0U",
+    "GzExS7WybJg"
+  ],
+  "recentTracks": [
+    "7nVctvQVz0U",
+    "phLb_SoPBlA",
+    "iFmHBp8WiYo",
+    "GzExS7WybJg",
+    "_LtAZDujqIw",
+    "dHWSXu6a9jM",
+    "YIYBhDeQfT0"
+  ]
+}

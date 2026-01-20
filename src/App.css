@@ -1,0 +1,165 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: var(--pageBg, #f8f8fa);
+  color: var(--systemPrimary, rgba(0, 0, 0, 0.85));
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.dark .app {
+  background: var(--pageBg, #1f1f1f);
+  color: var(--systemPrimary, rgba(255, 255, 255, 0.85));
+}
+
+/* Removed animated background - Apple Music uses solid colors */
+
+.welcome-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 48px;
+}
+
+.welcome-content {
+  text-align: center;
+  max-width: 500px;
+  animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.welcome-icon {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 32px;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.welcome-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #fff;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-content p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+/* Scrollbar styling - Hidden */
+.main-content::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.main-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.main-content::-webkit-scrollbar-track {
+  display: none;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.page-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 48px;
+  text-align: center;
+}
+
+.page-placeholder h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.page-placeholder p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding-bottom: 120px; /* More space for mobile player */
+  }
+
+  .welcome-content h1 {
+    font-size: 32px;
+  }
+
+  .welcome-content p {
+    font-size: 16px;
+  }
+
+  .page-placeholder h2 {
+    font-size: 24px;
+  }
+
+  .page-placeholder p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-content {
+    padding: 24px;
+  }
+
+  .welcome-content h1 {
+    font-size: 28px;
+  }
+
+  .page-placeholder {
+    padding: 24px;
+  }
+}

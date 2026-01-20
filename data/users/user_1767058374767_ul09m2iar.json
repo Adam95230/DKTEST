@@ -1,0 +1,30 @@
+{
+  "id": "user_1767058374767_ul09m2iar",
+  "username": "adk",
+  "email": "wasskju@gmail.com",
+  "passwordHash": "4fc529953651a71cbf5c3f1a89eacbf4fb5ac2efe51570cd0be1557a7d1c32db",
+  "createdAt": 1767058374768,
+  "preferences": {
+    "theme": "dark",
+    "colorTheme": "pink",
+    "volume": 0.09,
+    "autoplay": true,
+    "shuffle": true,
+    "repeat": "none",
+    "language": "fr"
+  },
+  "likedTracks": [
+    "_QtN6qocpKU"
+  ],
+  "recentTracks": [
+    "7nVctvQVz0U",
+    "phLb_SoPBlA",
+    "_QtN6qocpKU",
+    "tF4LK5ZqAgE",
+    "OV0mnnnYxto",
+    "KZMjXoqpE6E",
+    "KYMk098akgE",
+    "WVEMQV8dzi0",
+    "4VI37xq_Lkg"
+  ]
+}
